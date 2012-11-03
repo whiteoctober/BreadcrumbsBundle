@@ -2,7 +2,6 @@
 
 namespace WhiteOctober\BreadcrumbsBundle\DependencyInjection;
 
-use Symfony\Component\Config\Definition\Builder\NodeBuilder;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 
 class Configuration

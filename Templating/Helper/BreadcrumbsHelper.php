@@ -20,14 +20,14 @@ class BreadcrumbsHelper extends Helper
     /**
      * Returns the HTML for the breadcrumbs
      *
-     * @param $name
+     * @param  array  $options
      * @return string A HTML string
      */
     public function breadcrumbs(array $options = array())
     {
         return $this->templating->render(
-                "WhiteOctoberBreadcrumbsBundle::breadcrumbs.html.twig",
-                $this->resolveOptions($options)
+            "WhiteOctoberBreadcrumbsBundle::breadcrumbs.html.twig",
+            $this->resolveOptions($options)
         );
     }
 
@@ -42,14 +42,14 @@ class BreadcrumbsHelper extends Helper
     private function resolveOptions(array $options = array())
     {
         return array_merge(
-                array(
-                        'breadcrumbs' => $this->breadcrumbs,
-                        'translation_domain' => null,
-                        'locale' => null,
-                        'listId' => 'wo-breadcrumbs',
-                        'listClass' => 'breadcrumb',
-                        'separator' => '/'
-                ), $options
+            array(
+                'breadcrumbs' => $this->breadcrumbs,
+                'translation_domain' => null,
+                'locale' => null,
+                'listId' => 'wo-breadcrumbs',
+                'listClass' => 'breadcrumb',
+                'separator' => '/'
+            ), $options
         );
     }
 }
