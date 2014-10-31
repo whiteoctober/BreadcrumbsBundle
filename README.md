@@ -109,6 +109,7 @@ The following parameters can be overriden in your `config.yml` or similar:
         listId:             defaults to 'wo-breadcrumbs'
         listClass:          defaults to 'breadcrumb'
         itemClass:          defaults to ''
+        itemActiveClass:    defaults to 'active'
         linkRel:            defaults to ''
         locale:             defaults to null, so the default locale is used
         translation_domain: defaults to null, so the default domain is used
