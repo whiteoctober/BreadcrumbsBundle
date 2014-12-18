@@ -18,5 +18,10 @@
     "autoload": {
         "psr-0": { "WhiteOctober\\BreadcrumbsBundle": "" }
     },
-    "target-dir": "WhiteOctober/BreadcrumbsBundle"
+    "target-dir": "WhiteOctober/BreadcrumbsBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
+    }
 }
