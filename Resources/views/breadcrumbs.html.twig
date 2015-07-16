@@ -2,7 +2,7 @@
   {% spaceless %}
     <ul id="{{ listId }}" class="{{ listClass }}" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
       {% for b in breadcrumbs %}
-        <li{% if itemClass is defined and itemClass|length %} class="{{ itemClass }}"{% endif %}{% if not(loop.first) %} itemprop="child"{% endif %}>
+        <li{% if itemClass is defined and itemClass|length %} class="{{ itemClass }}"{% endif %}{% if not(loop.first) %} itemprop="child" class="active"{% endif %}>
           {% if b.url and not loop.last %}<a href="{{ b.url }}" itemprop="url"{% if linkRel is defined and linkRel|length %} rel="{{ linkRel }}"{% endif %}>{% endif %}
           <span itemprop="title">{{- b.text | trans(b.translationParameters, translation_domain, locale) -}}</span>
           {% if b.url and not loop.last %}</a>{% endif %}
