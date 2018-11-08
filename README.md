@@ -34,7 +34,7 @@ Installation
     # app/config/config.yml
     white_october_breadcrumbs: ~
     ```
-    
+
 4. Configure templating for your application if you haven't already.  For example:
 
     ```yaml
@@ -47,7 +47,7 @@ Installation
     templating:
         engines: ['twig']
     ```
-    
+
 That's it for basic configuration. For more options check the [Configuration](#configuration) section.
 
 Usage
@@ -139,8 +139,10 @@ white_october_breadcrumbs:
     linkRel:            ''
     locale:             ~ # defaults to null, so the default locale is used
     translation_domain: ~ # defaults to null, so the default domain is used
-    viewTemplate:       'WhiteOctoberBreadcrumbsBundle::microdata.html.twig'
+    viewTemplate:       '@WhiteOctoberBreadcrumbsBundle/microdata.html.twig'
 ```
+
+> **NOTE:** Change `viewTemplate` if you need to use a different built-in view or your own custom view
 
 These can also be passed as parameters in the view when rendering the
 breadcrumbs - for example:
@@ -227,14 +229,19 @@ There are two methods for doing this.
 
 1. You can override the template used by copying the
     `Resources/views/microdata.html.twig` file out of the bundle and placing it
-    into `app/Resources/WhiteOctoberBreadcrumbsBundle/views`, then customising
+    into `app/Resources/WhiteOctoberBreadcrumbsBundle/views` (Symfony <=3) or `templates/bundles/WhiteOctoberBreadcrumbsBundle` (Symfony 4), then customising
     as you see fit. Check the [Overriding bundle templates][1] documentation section
     for more information.
 
 2. Use the `viewTemplate` configuration parameter:
     
     ``` jinja
+    {# Symfony <=3 #}
     {{ wo_render_breadcrumbs({ viewTemplate: "YourOwnBundle::yourBreadcrumbs.html.twig" }) }}
+    ```
+    ``` jinja
+    {# Symfony 4 #}
+    {{ wo_render_breadcrumbs({ viewTemplate: "path/to/yourBreadcrumbs.html.twig" }) }}
     ```
 > **NOTE:** If you want to use the JSON-LD format, there's already an existing template 
 at `WhiteOctoberBreadcrumbsBundle::json-ld.html.twig`. Just set this template as the value for 

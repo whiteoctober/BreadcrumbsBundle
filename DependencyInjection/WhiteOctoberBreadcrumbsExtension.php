@@ -35,10 +35,10 @@ class WhiteOctoberBreadcrumbsExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        if($config['viewTemplate'] === 'WhiteOctoberBreadcrumbsBundle::breadcrumbs.html.twig') {
+        if(in_array($config['viewTemplate'], array('WhiteOctoberBreadcrumbsBundle::breadcrumbs.html.twig', 'WhiteOctoberBreadcrumbsBundle::microdata.html.twig'))) {
             trigger_error(
                 'Using viewTemplate "'.$config['viewTemplate'].'"" is deprecated and should be replaced by ' .
-                '"WhiteOctoberBreadcrumbsBundle::microdata.html.twig"',
+                '"@WhiteOctoberBreadcrumbsBundle/microdata.html.twig"',
                 E_USER_DEPRECATED
             );
         }
