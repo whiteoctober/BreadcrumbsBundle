@@ -3,7 +3,7 @@ _This project is looking for maintainers - [details here](https://github.com/whi
 Installation
 ============
 
-1. Configure templating for your application if you haven't already.  For example:
+1. Configure templating for your application if you haven't already (only for Symfony < 4.3).  For example:
 
     ```yaml
     # app/config/config.yml (Symfony <=3)
@@ -11,7 +11,7 @@ Installation
         templating:
             engines: ['twig']
     
-    # config/packages/framework.yaml (Symfony 4)
+    # config/packages/framework.yaml (Symfony < 4.3)
     templating:
         engines: ['twig']
     ```
